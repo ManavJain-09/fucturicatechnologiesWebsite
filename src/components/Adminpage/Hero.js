@@ -92,7 +92,7 @@ const Hero = () => {
         const today = new Date();
         const yesterday = new Date(today);
         yesterday.setDate(today.getDate() - 1);
-        if(yesterday.getDay() === 0) {
+        if (yesterday.getDay() === 0) {
             yesterday.setDate(yesterday.getDate() - 1);
         }
         yesterday.setHours(0, 0, 0, 0);

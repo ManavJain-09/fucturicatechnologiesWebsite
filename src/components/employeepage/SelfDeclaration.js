@@ -56,7 +56,7 @@ const SelfDeclaration = () => {
             return;
         }
 
-        if(localStorage.getItem('email') !== formData.email) {
+        if (localStorage.getItem('email') !== formData.email) {
             setError("The email you entered doesn't match with your account.");
             setIsSubmitting(false);
             return;

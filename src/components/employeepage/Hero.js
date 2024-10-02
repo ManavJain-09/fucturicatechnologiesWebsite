@@ -24,7 +24,6 @@ const Employee = () => {
     const token = localStorage.getItem('token');
     const [users, setUsers] = useState({});
 
-
     const timerRef1 = useRef(null);
     const logoutTimeout = 15 * 60 * 1000; // 15 minutes
     const workLogs = users.workLogs;
@@ -37,18 +36,16 @@ const Employee = () => {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        const filteredLogs = workLogs.filter((log) => {
+        const filteredLogs = workLogs?.filter((log) => {
             const logDate = new Date(log.date);
             logDate.setHours(0, 0, 0, 0);
-            return logDate.getTime() !== today.getTime();
+            return logDate.getTime() === today.getTime();
         });
 
         if (filteredLogs.length >= 1) {
-            const YesterdayLogs = filteredLogs[filteredLogs.length - 1];
-            const TodayLogs =
-                workLogs[workLogs.length - 2].workingHours - YesterdayLogs.workingHours;
+            const TodayLogs = filteredLogs[filteredLogs.length - 2].workingHours;
 
-            return TodayLogs || 0;
+            return TodayLogs;
         }
         return 0;
     };

@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
     } catch (error) {
       console.error('Logout failed:', error);
     }
-  }, [dispatch, navigate, userId]);
+  }, [dispatch, navigate, userId, token]);
 
   useEffect(() => {
     //Tab close

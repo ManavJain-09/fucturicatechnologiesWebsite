@@ -499,7 +499,7 @@ const Employee = () => {
                 clearTimeout(timeoutRef.current);
             }
         };
-    });
+    }, [startLogoutTimer]);
 
     return (
         <>

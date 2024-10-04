@@ -25,7 +25,7 @@ const Employee = () => {
     const [users, setUsers] = useState({});
 
     const timeoutRef = useRef(null);
-    const logoutTimeout = 15 * 60 * 1000; // 15 minutes
+    const logoutTimeout = 30 * 60 * 1000; // 15 minutes
     const workLogs = users.workLogs;
 
     const getTodayWorkingHours = (workLogs) => {
